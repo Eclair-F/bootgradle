@@ -5,8 +5,16 @@ package com.qw.bootgradle.dao;
 public class Mongo {
     private Integer id;
     private Integer age;
-
     private String name;
+
+    @Override
+    public String toString() {
+        return "Mongo{" +
+                "id=" + id +
+                ", age=" + age +
+                ", name='" + name + '\'' +
+                '}';
+    }
 
     public Integer getId() {
         return id;
@@ -31,5 +39,7 @@ public class Mongo {
     public void setName(String name) {
         this.name = name;
     }
+
+
 
 }

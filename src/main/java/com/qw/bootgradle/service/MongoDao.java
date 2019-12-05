@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class MongoDao {
 
-
     private final MongoTemplate mongoTemplate;
 
     public MongoDao(MongoTemplate mongoTemplate) {
