@@ -2,13 +2,14 @@ package com.qw.bootgradle.service;
 
 
 import com.qw.bootgradle.dao.Mongo;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.qw.bootgradle.dao.tt;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class MongoDao {
@@ -32,9 +33,10 @@ public class MongoDao {
      * 根据用户名查询对象
      * @return
      */
-    public Mongo findTestByName(String name) {
-        Query query=new Query(Criteria.where("name").is(name));
-        return mongoTemplate.findOne(query , Mongo.class);
+    public List<tt> findTest() {
+        //Query query=new Query(Criteria.where("name").is(name));
+        return mongoTemplate.findAll(tt.class);
+        //return mongoTemplate.findOne(query , Mongo.class);
     }
 
     /**
